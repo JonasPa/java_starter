@@ -5,9 +5,9 @@ package lt.starter;
  */
 public class SequenceTasks {
 
-    private final String sequence;
+    private final int[] sequence;
 
-    public SequenceTasks(String sequence) {
+    public SequenceTasks(int... sequence) {
         this.sequence = sequence.replaceAll("\\D","");
     }
 
