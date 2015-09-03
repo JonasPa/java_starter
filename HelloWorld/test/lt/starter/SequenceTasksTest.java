@@ -17,7 +17,23 @@ public class SequenceTasksTest {
         assertEquals(1, new SequenceTasks(-25, 8, 7, 23).countEvenAndPositiveNumbers());
         assertEquals(2, new SequenceTasks(-43, 1, 0, -25, 8).countEvenAndPositiveNumbers());
 
+
+
     }
+    @Test
+    public void testIsEvenNumber() throws Exception {
+        assertEquals(true, new SequenceTasks().isEvenNumber(8));
+        assertEquals(false, new SequenceTasks().isEvenNumber(7));
+        assertEquals(true, new SequenceTasks().isEvenNumber(0));
+        assertEquals(true, new SequenceTasks().isEvenNumber(-14));
+
+    }
+    @Test
+    public void testIsPositiveNumber() throws Exception{
+        assertEquals(true, new SequenceTasks().isPositiveNumber(5));
+        assertEquals(false, new SequenceTasks().isPositiveNumber(-14));
+        assertEquals(true, new SequenceTasks().isPositiveNumber(0));
 
 
+    }
 }
