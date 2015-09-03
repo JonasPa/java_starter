@@ -33,7 +33,13 @@ public class SequenceTasksTest {
         assertEquals(true, new SequenceTasks().isPositiveNumber(5));
         assertEquals(false, new SequenceTasks().isPositiveNumber(-14));
         assertEquals(true, new SequenceTasks().isPositiveNumber(0));
-
+    }
+    @Test
+    public void testCollectEvenNumbers() throws Exception {
+        assertArrayEquals(new int[] {-58, 12, 86, 52}, new SequenceTasks(-58, 12, 86, -85, 52).collectEvenNumbers());
+        assertArrayEquals(new int[] {-58}, new SequenceTasks(-58, 321, 251, 531).collectEvenNumbers());
+        assertArrayEquals(new int[] {8, 10}, new SequenceTasks(-25, 8, 10, 23).collectEvenNumbers());
+        assertArrayEquals(new int[] {0, -26, 8}, new SequenceTasks(-43, 1, 0, -26, 8).collectEvenNumbers());
 
     }
 }
