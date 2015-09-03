@@ -42,4 +42,11 @@ public class SequenceTasksTest {
         assertArrayEquals(new int[] {0, -26, 8}, new SequenceTasks(-43, 1, 0, -26, 8).collectEvenNumbers());
 
     }
+    @Test
+    public void testCollectNegativeNumbers() throws Exception {
+        assertArrayEquals(new int[]{-58, -85}, new SequenceTasks(-58, 12, 86, -85, 52).collectNegativeNumbers());
+        assertArrayEquals(new int[]{-58}, new SequenceTasks(-58, 321, 251, 531).collectNegativeNumbers());
+        assertArrayEquals(new int[]{-25}, new SequenceTasks(-25, 8, 10, 23).collectNegativeNumbers());
+        assertArrayEquals(new int[]{-43, -26}, new SequenceTasks(-43, 1, 0, -26, 8).collectNegativeNumbers());
+    }
 }

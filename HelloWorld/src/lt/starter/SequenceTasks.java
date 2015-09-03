@@ -18,8 +18,8 @@ public class SequenceTasks {
 
     public int countEvenAndPositiveNumbers() {
         int count = 0;
-            for(int number: sequence){
-                if (isEvenNumber(number)&& isPositiveNumber(number)){
+        for (int number : sequence) {
+            if (isEvenNumber(number) && isPositiveNumber(number)) {
                 count++;
 
 
@@ -31,15 +31,16 @@ public class SequenceTasks {
     }
 
     public boolean isEvenNumber(int number) {
-        return number%2==0;
+        return number % 2 == 0;
     }
 
     public boolean isPositiveNumber(int number) {
-        return number>=0;
+        return number >= 0;
     }
-    int[] toIntArray(List<Integer> list){
+
+    int[] toIntArray(List<Integer> list) {
         int[] ret = new int[list.size()];
-        for(int i = 0;i < ret.length;i++)
+        for (int i = 0; i < ret.length; i++)
             ret[i] = list.get(i);
         return ret;
     }
@@ -50,14 +51,20 @@ public class SequenceTasks {
             if (isEvenNumber(number)) {
                 numbers.add(number);
             }
-
-
-
-
-
         }
         int[] array = toIntArray(numbers);
-                return array;
+        return array;
+    }
+
+    public int[] collectNegativeNumbers() {
+        List<Integer> numbers = new ArrayList<>();
+        for (int number : sequence) {
+            if (!isPositiveNumber(number)) {
+                numbers.add(number);
+            }
+        }
+        int[] array = toIntArray(numbers);
+        return array;
 
     }
 }
