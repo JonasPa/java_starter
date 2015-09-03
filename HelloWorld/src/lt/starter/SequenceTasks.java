@@ -2,6 +2,7 @@ package lt.starter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 
 /**
@@ -66,5 +67,22 @@ public class SequenceTasks {
         int[] array = toIntArray(numbers);
         return array;
 
+    }
+    public int[] collectNegativeOrEvenNumbers() {
+        List<Integer> numbers = new ArrayList<>();
+        int[] negativeNumbers = collectNegativeNumbers();
+        int[] evenNumbers = collectEvenNumbers();
+
+//        Integer[] both = Stream.of(negativeNumbers, evenNumbers).flatMap(Stream::of).toArray(Integer[]::new);
+
+
+        int[] array = new int[negativeNumbers.length+evenNumbers.length];
+        for (int i=0; i<negativeNumbers.length; i++)
+            array[i]=negativeNumbers[i];
+
+        for (int i=0; i<evenNumbers.length; i++)
+            array[i+negativeNumbers.length]=evenNumbers[i];
+
+        return array;
     }
 }
