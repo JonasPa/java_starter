@@ -8,19 +8,11 @@ public class SequenceTasks {
     private final int[] sequence;
 
     public SequenceTasks(int... sequence) {
-        this.sequence = sequence.replaceAll("\\D","");
+        this.sequence = sequence;
     }
 
-    //98648548
     public int countEvenAndPositiveNumbers() {
         int count=0;
-        for (char c : sequence.toCharArray()) {
-            int x = c-48;
-            if (x%2==0){
-                count++;
-            }
-
-        }
 
         return count;
     }
