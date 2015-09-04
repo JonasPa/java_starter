@@ -22,8 +22,6 @@ public class SequenceTasks {
         for (int number : sequence) {
             if (isEvenNumber(number) && isPositiveNumber(number)) {
                 count++;
-
-
             }
 
         }
@@ -31,11 +29,11 @@ public class SequenceTasks {
 
     }
 
-    public boolean isEvenNumber(int number) {
+    public static boolean isEvenNumber(int number) {
         return number % 2 == 0;
     }
 
-    public boolean isPositiveNumber(int number) {
+    public static boolean isPositiveNumber(int number) {
         return number >= 0;
     }
 
@@ -69,12 +67,8 @@ public class SequenceTasks {
 
     }
     public int[] collectNegativeOrEvenNumbers() {
-        List<Integer> numbers = new ArrayList<>();
         int[] negativeNumbers = collectNegativeNumbers();
         int[] evenNumbers = collectEvenNumbers();
-
-//        Integer[] both = Stream.of(negativeNumbers, evenNumbers).flatMap(Stream::of).toArray(Integer[]::new);
-
 
         int[] array = new int[negativeNumbers.length+evenNumbers.length];
         for (int i=0; i<negativeNumbers.length; i++)
@@ -83,6 +77,10 @@ public class SequenceTasks {
         for (int i=0; i<evenNumbers.length; i++)
             array[i+negativeNumbers.length]=evenNumbers[i];
 
-        return array;
+        return removeDuplicates(array);
+    }
+
+    public static int[] removeDuplicates(int... numbers){
+        return new int[]{};
     }
 }
