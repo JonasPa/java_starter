@@ -51,15 +51,16 @@ public class SequenceTasksTest {
 
     @Test
     public void testCollectNegativeOrEvenNumbers() throws Exception {
-        assertArrayEquals(array(-58, 12, 86, 52), new SequenceTasks(-58, 12, 86, -85, 52).collectNegativeOrEvenNumbers());
+        assertArrayEquals(array(-85, -58, 12, 52, 86), new SequenceTasks(-58, 12, 86, -85, 52).collectNegativeOrEvenNumbers());
         assertArrayEquals(array(-58), new SequenceTasks(-58, 321, 251, 531).collectNegativeOrEvenNumbers());
-        assertArrayEquals(array(), new SequenceTasks(-25, 8, 10, 23).collectNegativeOrEvenNumbers());
-        assertArrayEquals(array(-26), new SequenceTasks(-43, 1, 0, -26, 8).collectNegativeOrEvenNumbers());
+        assertArrayEquals(array(-25, 8, 10), new SequenceTasks(-25, 8, 10, 23).collectNegativeOrEvenNumbers());
+        assertArrayEquals(array(-43, -26, 0, 8), new SequenceTasks(-43, 1, 0, -26, 8).collectNegativeOrEvenNumbers());
     }
 
     @Test
     public void testRemoveDuplicates(){
-        assertArrayEquals(array(1, 2, 3), SequenceTasks.removeDuplicates(1, 2, 2, 3));
+        int[] actuals = SequenceTasks.removeDuplicates(1, 2, 2, 3);
+        assertArrayEquals(array(1, 2, 3), actuals);
     }
 
     private int[] array(int... array){

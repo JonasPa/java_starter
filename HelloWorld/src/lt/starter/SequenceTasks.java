@@ -1,6 +1,7 @@
 package lt.starter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -37,7 +38,7 @@ public class SequenceTasks {
         return number >= 0;
     }
 
-    int[] toIntArray(List<Integer> list) {
+    public static int[] toIntArray(List<Integer> list) {
         int[] ret = new int[list.size()];
         for (int i = 0; i < ret.length; i++)
             ret[i] = list.get(i);
@@ -71,16 +72,29 @@ public class SequenceTasks {
         int[] evenNumbers = collectEvenNumbers();
 
         int[] array = new int[negativeNumbers.length+evenNumbers.length];
-        for (int i=0; i<negativeNumbers.length; i++)
-            array[i]=negativeNumbers[i];
+        System.arraycopy(negativeNumbers, 0, array, 0, negativeNumbers.length);
 
-        for (int i=0; i<evenNumbers.length; i++)
-            array[i+negativeNumbers.length]=evenNumbers[i];
+        System.arraycopy(evenNumbers, 0, array, 0 + negativeNumbers.length, evenNumbers.length);
 
+        Arrays.sort(array);
         return removeDuplicates(array);
     }
 
-    public static int[] removeDuplicates(int... numbers){
-        return new int[]{};
+    public static int[] removeDuplicates(int... numbers) {
+        List<Integer> result = new ArrayList<>();
+        for (int number : numbers) {
+            if (!result.contains(number))
+            result.add(number);
+
+
+        }
+
+        int[]  array = toIntArray(result);
+        return array;
     }
-}
+
+    }
+
+
+
+
