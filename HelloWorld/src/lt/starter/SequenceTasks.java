@@ -93,7 +93,10 @@ public class SequenceTasks {
         return array;
     }
 
+    public int[] collectMaxNumbers() {
+        return new int[0];
     }
+}
 
 
 
