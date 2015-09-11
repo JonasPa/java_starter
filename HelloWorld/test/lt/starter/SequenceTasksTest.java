@@ -63,7 +63,7 @@ public class SequenceTasksTest {
         assertArrayEquals(array(1, 2, 3), actuals);
     }
 
-    private int[] array(int... array){
+    public static int[] array(int... array){
         return array;
     }
 }

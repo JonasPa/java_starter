@@ -2,6 +2,7 @@ package lt.starter;
 
 import org.junit.Test;
 
+import static lt.starter.SequenceTasksTest.array;
 import static org.junit.Assert.*;
 
 /**
@@ -32,6 +33,14 @@ public class MathUtilsTest {
         assertEquals(8, MathUtils.multiply(1, 4, 2, 0));
         assertEquals(0, MathUtils.sum(0));
     }
+    @Test
+    public void testDivisible() throws Exception {
+        assertArrayEquals(array(3, 6, 9, 12), MathUtils.divisible(1, 13));
+        assertArrayEquals(array(-15, -12, -9, -6, -3, 0, 3, 6, 9, 12), MathUtils.divisible(-16, 13));
+    }
+
+
+    
     /**
      * Created by Jonas Pakalnis
      */}

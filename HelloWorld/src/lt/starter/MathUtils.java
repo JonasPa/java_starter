@@ -1,5 +1,10 @@
 package lt.starter;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static lt.starter.SequenceTasks.toIntArray;
+
 /**
  * Created by Jonas Pakalnis
  */
@@ -40,5 +45,16 @@ public class MathUtils {
             }
         }
         return multiply;
+    }
+
+    public static int[] divisible(int from, int to) {
+        List<Integer> divisible = new ArrayList<>();
+        for (int i = from; i < to; i++) {
+            if (i % 3 == 0)
+                divisible.add(i);
+        }
+
+        int[] array = toIntArray(divisible);
+        return array;
     }
 }
