@@ -20,10 +20,10 @@ public class SequenceTasksTest {
 
     @Test
     public void testIsEvenNumber() throws Exception {
-        assertEquals(true, SequenceTasks.isEvenNumber(8));
-        assertEquals(false, SequenceTasks.isEvenNumber(7));
-        assertEquals(true, SequenceTasks.isEvenNumber(0));
-        assertEquals(true, SequenceTasks.isEvenNumber(-14));
+        assertEquals(true, SequenceTasks.testSum(8));
+        assertEquals(false, SequenceTasks.testSum(7));
+        assertEquals(true, SequenceTasks.testSum(0));
+        assertEquals(true, SequenceTasks.testSum(-14));
     }
 
     @Test
@@ -35,10 +35,10 @@ public class SequenceTasksTest {
 
     @Test
     public void testCollectEvenNumbers() throws Exception {
-        assertArrayEquals(array(-58, 12, 86, 52), new SequenceTasks(-58, 12, 86, -85, 52).collectEvenNumbers());
-        assertArrayEquals(array(-58), new SequenceTasks(-58, 321, 251, 531).collectEvenNumbers());
-        assertArrayEquals(array(8, 10), new SequenceTasks(-25, 8, 10, 23).collectEvenNumbers());
-        assertArrayEquals(array(0, -26, 8), new SequenceTasks(-43, 1, 0, -26, 8).collectEvenNumbers());
+        assertArrayEquals(array(-58, 12, 86, 52), new SequenceTasks(-58, 12, 86, -85, 52).testSum());
+        assertArrayEquals(array(-58), new SequenceTasks(-58, 321, 251, 531).testSum());
+        assertArrayEquals(array(8, 10), new SequenceTasks(-25, 8, 10, 23).testSum());
+        assertArrayEquals(array(0, -26, 8), new SequenceTasks(-43, 1, 0, -26, 8).testSum());
     }
 
     @Test
@@ -51,10 +51,10 @@ public class SequenceTasksTest {
 
     @Test
     public void testCollectNegativeOrEvenNumbers() throws Exception {
-        assertArrayEquals(array(-85, -58, 12, 52, 86), new SequenceTasks(-58, 12, 86, -85, 52).collectNegativeOrEvenNumbers());
-        assertArrayEquals(array(-58), new SequenceTasks(-58, 321, 251, 531).collectNegativeOrEvenNumbers());
-        assertArrayEquals(array(-25, 8, 10), new SequenceTasks(-25, 8, 10, 23).collectNegativeOrEvenNumbers());
-        assertArrayEquals(array(-43, -26, 0, 8), new SequenceTasks(-43, 1, 0, -26, 8).collectNegativeOrEvenNumbers());
+        assertArrayEquals(array(-85, -58, 12, 52, 86), new SequenceTasks(-58, 12, 86, -85, 52).testSum());
+        assertArrayEquals(array(-58), new SequenceTasks(-58, 321, 251, 531).testSum());
+        assertArrayEquals(array(-25, 8, 10), new SequenceTasks(-25, 8, 10, 23).testSum());
+        assertArrayEquals(array(-43, -26, 0, 8), new SequenceTasks(-43, 1, 0, -26, 8).testSum());
     }
 
     @Test

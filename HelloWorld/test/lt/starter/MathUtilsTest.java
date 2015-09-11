@@ -11,29 +11,27 @@ public class MathUtilsTest {
 
     @Test
     public void testSum() throws Exception {
-        assertArrayEquals(array(8), new SequenceTasks(1, 4, 2, 1));
-
+        assertEquals(8, MathUtils.sum(1, 4, 2, 1));
+        assertEquals(0, MathUtils.sum(0));
     }
-
-    private void assertArrayEquals(int[] array, SequenceTasks sequenceTasks) {
-            }
 
     @Test
     public void testMax() throws Exception {
-        assertArrayEquals(array(4), new SequenceTasks(1, 4, 2, 1));
-
+        assertEquals(4, MathUtils.max(1, 4, 2, 0));
+        assertEquals(0, MathUtils.sum(0));
     }
 
     @Test
     public void testMin() throws Exception {
-
+        assertEquals(0, MathUtils.min(1, 4, 2, 0));
+        assertEquals(0, MathUtils.sum(0));
     }
 
     @Test
     public void testMultiply() throws Exception {
-
+        assertEquals(8, MathUtils.multiply(1, 4, 2, 0));
+        assertEquals(0, MathUtils.sum(0));
     }
-    private int[] array(int... array){
-        return array;
-    }
-}
+    /**
+     * Created by Jonas Pakalnis
+     */}

@@ -3,7 +3,6 @@ package lt.starter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 
 /**
@@ -21,7 +20,7 @@ public class SequenceTasks {
     public int countEvenAndPositiveNumbers() {
         int count = 0;
         for (int number : sequence) {
-            if (isEvenNumber(number) && isPositiveNumber(number)) {
+            if (testSum(number) && isPositiveNumber(number)) {
                 count++;
             }
 
@@ -30,7 +29,7 @@ public class SequenceTasks {
 
     }
 
-    public static boolean isEvenNumber(int number) {
+    public static boolean testSum(int number) {
         return number % 2 == 0;
     }
 
@@ -45,10 +44,10 @@ public class SequenceTasks {
         return ret;
     }
 
-    public int[] collectEvenNumbers() {
+    public int[] testSum() {
         List<Integer> numbers = new ArrayList<>();
         for (int number : sequence) {
-            if (isEvenNumber(number)) {
+            if (testSum(number)) {
                 numbers.add(number);
             }
         }
@@ -69,7 +68,7 @@ public class SequenceTasks {
     }
     public int[] collectNegativeOrEvenNumbers() {
         int[] negativeNumbers = collectNegativeNumbers();
-        int[] evenNumbers = collectEvenNumbers();
+        int[] evenNumbers = testSum();
 
         int[] array = new int[negativeNumbers.length+evenNumbers.length];
         System.arraycopy(negativeNumbers, 0, array, 0, negativeNumbers.length);
