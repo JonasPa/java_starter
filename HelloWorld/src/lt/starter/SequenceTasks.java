@@ -20,7 +20,7 @@ public class SequenceTasks {
     public int countEvenAndPositiveNumbers() {
         int count = 0;
         for (int number : sequence) {
-            if (testSum(number) && isPositiveNumber(number)) {
+            if (isEven(number) && isPositiveNumber(number)) {
                 count++;
             }
 
@@ -29,7 +29,7 @@ public class SequenceTasks {
 
     }
 
-    public static boolean testSum(int number) {
+    public static boolean isEven(int number) {
         return number % 2 == 0;
     }
 
@@ -47,7 +47,7 @@ public class SequenceTasks {
     public int[] testSum() {
         List<Integer> numbers = new ArrayList<>();
         for (int number : sequence) {
-            if (testSum(number)) {
+            if (isEven(number)) {
                 numbers.add(number);
             }
         }

@@ -20,10 +20,10 @@ public class SequenceTasksTest {
 
     @Test
     public void testIsEvenNumber() throws Exception {
-        assertEquals(true, SequenceTasks.testSum(8));
-        assertEquals(false, SequenceTasks.testSum(7));
-        assertEquals(true, SequenceTasks.testSum(0));
-        assertEquals(true, SequenceTasks.testSum(-14));
+        assertEquals(true, SequenceTasks.isEven(8));
+        assertEquals(false, SequenceTasks.isEven(7));
+        assertEquals(true, SequenceTasks.isEven(0));
+        assertEquals(true, SequenceTasks.isEven(-14));
     }
 
     @Test
