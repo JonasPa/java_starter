@@ -7,8 +7,6 @@ public class UpperCase {
          char symbol = text.charAt(i);
          char upperCaseLetter = Character.toUpperCase(symbol);
          capitalize = capitalize+upperCaseLetter;
-
-
       }
    return capitalize ;
    }
