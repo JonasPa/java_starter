@@ -6,7 +6,7 @@ public class LineOfInput {   // saved as "LineOfInput.java"
             char letter;
       for (int i = 0; i < diag.length(); i++) {
          letter = diag.charAt(i);
-         if (Character.isLetter(letter))
+            if (Character.isLetter(letter))
             System.out.print(letter);
          else
             System.out.println(' ');
