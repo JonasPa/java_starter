@@ -1,5 +1,4 @@
 package lt.starter;
-
 import java.util.Arrays;
 
 
@@ -14,10 +13,8 @@ public class GreaterOrEqual {
         System.out.println(Arrays.toString(array));
         for (int i = array.length - 1; i >= index; i--) {
             array[i] = array[i - 1];
-            array[i-1] = V;
-
-
         }
+        array[index] = V;
         System.out.println(Arrays.toString(array));
     }
 }
