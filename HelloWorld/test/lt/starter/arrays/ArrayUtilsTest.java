@@ -13,9 +13,20 @@ public class ArrayUtilsTest {
 
     @Test
     public void testCollectGreaterThan() throws Exception {
-        assertArrayEquals(array(-85, -58, 12, 52, 86), new ArrayUtils(5, 4, 8, 9, 6).testSum());
+        assertArrayEquals(array(8, 9, 6), ArrayUtils.collectGreaterThan(5, array(5, 4, 8, 9, 6)));
 
     }
+    @Test
+    public void testReverseArray() throws Exception {
+        assertArrayEquals(array(6, 9, 8, 4, 5), ArrayUtils.reverseArray(array(5, 4, 8, 9, 6)));
 
-
+    }
+    @Test
+    public void testContains() throws Exception {
+        assertTrue(ArrayUtils.contains(8, array(5, 4, 8, 7, 10)));
+    }
+    @Test
+    public void testRemoveFromArray() throws Exception {
+        assertArrayEquals(array(5, 4, 9, 6), ArrayUtils.removeFromArray(8, array(5, 4, 8, 9, 6)));
+    }
 }
