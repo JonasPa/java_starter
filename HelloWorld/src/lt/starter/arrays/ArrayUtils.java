@@ -1,6 +1,7 @@
 package lt.starter.arrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static lt.starter.SequenceTasks.toIntArray;
@@ -50,13 +51,33 @@ public class ArrayUtils {
     }
 
     public static int[] removeFromArray(int numberToRemove, int[] array) {
-        List<Integer> numbers = new ArrayList<>();
+        int index = ArrayUtils.indexOf(numberToRemove, array);
+        array = ArrayUtils.removeByIndex(index, array);
+        return array;
+    }
+
+    public static int[] insert(int number, int index, int[] array) {
+        for (int i = array.length - 1; i > index; i--) {
+            array[i] = array[i - 1];
+        }
+        array[index] = number;
+        return array;
+    }
+
+    public static int indexOf(int number, int[] array) {
         for (int i = 0; i < array.length; i++) {
-            if (array[i] != numberToRemove) {
-                numbers.add(array[i]);
+            if (array[i] == number) {
+                return i;
             }
         }
-        array = toIntArray(numbers);
+        return -1;
+    }
+
+    public static int[] removeByIndex(int index, int[] array) {
+        for (int i = index; i < array.length - 1; i++) {
+            array[i] = array[i + 1];
+        }
+        array[array.length - 1] = 0;
         return array;
     }
 }
