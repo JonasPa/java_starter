@@ -38,9 +38,12 @@ public class MathUtilsTest {
         assertArrayEquals(array(3, 6, 9, 12), MathUtils.divisible(1, 13));
         assertArrayEquals(array(-15, -12, -9, -6, -3, 0, 3, 6, 9, 12), MathUtils.divisible(-16, 13));
     }
+    @Test
+    public void testAverage() throws Exception {
+        assertEquals(7, MathUtils.average(1, 4, 5, 8, 10, 18, 7), 2);
+        assertEquals(0, MathUtils.average(), 2);
+    }
 
-
-    
     /**
      * Created by Jonas Pakalnis
      */}
