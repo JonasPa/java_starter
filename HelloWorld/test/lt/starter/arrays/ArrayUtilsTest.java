@@ -45,4 +45,9 @@ public class ArrayUtilsTest {
     public void testRemoveByIndex() throws Exception {
         assertArrayEquals(array(5, 4, 9, 6, 0), ArrayUtils.removeByIndex(2, array(5, 4, 8, 9, 6)));
     }
+
+    @Test
+    public void testArraySum() throws Exception {
+
+    }
 }
