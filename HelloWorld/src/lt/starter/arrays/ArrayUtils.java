@@ -80,4 +80,107 @@ public class ArrayUtils {
         array[array.length - 1] = 0;
         return array;
     }
+
+    public static int[] subArrays(int[] array, int startIndex, int endIndex) {
+        int[] myIntArray = new int[endIndex - startIndex];
+        for (int i = startIndex, j = 0; i < endIndex; i++, j++) {
+            myIntArray[j] = array[i];
+        }
+        return myIntArray;
+    }
+
+    public static int[] revertArray(int[] array) {
+        int[] myIntArray = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            myIntArray[i] = array[array.length - i - 1];
+
+        }
+        return myIntArray;
+    }
+
+    public static int lastIndexOf(int number, int[] array) {
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == number) {
+                index = i;
+            }
+        }
+        return index;
+    }
+
+    public static int[] arraySet(int index, int number, int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (i == index) {
+                array[i] = number;
+            }
+        }
+        return array;
+    }
+
+    public static int sumNumbersInArrays(int[] array1, int[] array2) {
+        int sum = 0;
+        for (int i = 0; i < array1.length; i++) {
+            sum += array1[i];
+        }
+        for (int i = 0; i < array2.length; i++) {
+            sum += array2[i];
+        }
+        return sum;
+    }
+
+    public static int[] sumOfArray(int[] firstArray, int[] secondArray) {
+        int[] sumArrays = new int[firstArray.length + secondArray.length];
+        for (int i = 0; i < firstArray.length; i++) {
+            sumArrays[i] = firstArray[i];
+        }
+        for (int i = 0, j = firstArray.length; i < secondArray.length; i++, j++) {
+            sumArrays[j] = secondArray[i];
+        }
+        return sumArrays;
+    }
+
+    public static boolean isEquals(int[] primaryArray, int[] anotherArray) {
+        if (primaryArray.length == anotherArray.length) {
+            for (int i = 0; i < primaryArray.length; i++) {
+                primaryArray[i] = anotherArray[i];
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    public static boolean containsArray(int[] primaryArray, int[] secondArray){
+        int index = 0;
+        boolean foundStart = false;
+        for (int i = 0; i < primaryArray.length; i++) {
+            //Tikrinu, kada pirmo arrayjaus indexas bus lygus mano arrayjaus pirmàjam skaièiui
+            if (primaryArray[i] == secondArray[index]){
+                //Neşinau
+                foundStart = true;
+                //Didinu indexà
+                index++;
+                //Tikrinu, ar index'as pasiekë antro arrajaus pabaigà
+                if(index == secondArray.length){
+                    return true;
+                }
+            } else {
+                //Neşinau
+                if (foundStart){
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static int[] removeFromArray (int[] firstArray, int[] secondArray){
+        boolean first = ArrayUtils.containsArray(firstArray, secondArray);
+
+
+
+
+
+        return null;
+    }
 }
