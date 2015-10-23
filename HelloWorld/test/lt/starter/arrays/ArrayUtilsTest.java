@@ -45,49 +45,4 @@ public class ArrayUtilsTest {
     public void testRemoveByIndex() throws Exception {
         assertArrayEquals(array(5, 4, 9, 6, 0), ArrayUtils.removeByIndex(2, array(5, 4, 8, 9, 6)));
     }
-
-    @Test
-    public void testSubArrays() throws Exception {
-        assertArrayEquals(array(8, 9, 6), ArrayUtils.subArrays(array(5, 4, 8, 9, 6, 10, 18, 21), 2, 5));
-    }
-
-    @Test
-    public void testRevertArray() throws Exception {
-        assertArrayEquals(array(10, 8, 6, 5), ArrayUtils.revertArray(array(5, 6, 8, 10)));
-    }
-
-    @Test
-    public void testLastIndexOf() throws Exception {
-        assertEquals(5, ArrayUtils.lastIndexOf(8, array(4, 6, 8, 7, 5, 8, 10)));
-    }
-
-    @Test
-    public void testArraySet() throws Exception {
-        assertArrayEquals(array(4, 5, 7, 8, 10), ArrayUtils.arraySet(2, 7, array(4, 5, 6, 8, 10)));
-    }
-
-    @Test
-    public void testSumNumbersInArrays() throws Exception {
-        assertEquals(50, ArrayUtils.sumNumbersInArrays(array(5, 6, 8), array(9, 7, 15)));
-    }
-
-    @Test
-    public void testSumOfArray() throws Exception {
-        assertArrayEquals(array(1, 6, 8, 5, 3, 2), ArrayUtils.sumOfArray(array(1, 6, 8), array(5, 3, 2)));
-
-    }
-
-    @Test
-    public void testIsEquals() throws Exception {
-        assertTrue(ArrayUtils.isEquals(array(1, 2, 3, 4), array(1, 2, 3, 4)));
-        assertFalse(ArrayUtils.isEquals(array(1, 2, 3, 4), array(1, 2, 3)));
-        assertFalse(ArrayUtils.isEquals(array(1, 2, 3, 4), array(1, 2, 3, 4, 5)));
-    }
-    @Test
-    public void testContainsArray() throws Exception {
-        assertTrue(ArrayUtils.containsArray(array(5, 9, 6, 7), array(9, 6)));
-        assertTrue(ArrayUtils.containsArray(array(5, 9, 6, 7), array(5, 9, 6, 7)));
-        assertTrue(ArrayUtils.containsArray(array(5, 9, 6, 7), array(9, 6, 7)));
-        assertFalse(ArrayUtils.containsArray(array(5, 9, 6, 7), array(9, 7)));
-    }
 }
