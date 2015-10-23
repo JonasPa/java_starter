@@ -66,7 +66,7 @@ public class MathUtils {
         for (int i = 0; i < numbers.length; i++) {
             sum = sum + numbers[i];
         }
-        double average = sum / numbers.length;
-        return average;
+
+        return sum / numbers.length;
     }
 }
