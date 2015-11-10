@@ -99,4 +99,12 @@ public class ArrayUtilsTest {
         assertArrayEquals(array(5, 7, 9, 11, 18, 23), ArrayUtils.removeFromArray(array(5, 7, 9, 11, 18, 23), array()));
         assertArrayEquals(array(), ArrayUtils.removeFromArray(array(), array()));
     }
+    @Test
+    public void testSort() throws Exception {
+        assertArrayEquals(array(1, 2, 3, 4, 5, 6), ArrayUtils.sort(1, 5, 3, 4, 2, 6));
+        assertArrayEquals(array(57, 64, 68, 71, 91), ArrayUtils.sort(68, 64, 71, 91, 57));
+        assertArrayEquals(array(32, 47, 52, 54, 85), ArrayUtils.sort(54, 32, 85, 47, 52));
+
+
+    }
 }

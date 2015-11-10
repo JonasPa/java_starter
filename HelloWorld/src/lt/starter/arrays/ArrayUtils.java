@@ -150,7 +150,7 @@ public class ArrayUtils {
     }
 
     public static boolean containsArray(int[] primaryArray, int[] secondArray) {
-        if (secondArray.length == 0){
+        if (secondArray.length == 0) {
             return false;
         }
         int index = 0;
@@ -188,5 +188,18 @@ public class ArrayUtils {
 
         }
         return firstArray;
+    }
+
+    public static int[] sort(int... sortToArray) {
+        for (int i = 0; i < sortToArray.length-1; i++) {
+            for (int a = 1; a < sortToArray.length; a++) {
+                if (sortToArray[a-1] > sortToArray[a]){
+                    int toSort = sortToArray[a-1];
+                    sortToArray[a-1] = sortToArray[a];
+                    sortToArray[a] = toSort;
+                }
+            }
+        }
+        return sortToArray;
     }
 }
