@@ -2,7 +2,7 @@ package lt.starter.arrays;
 
 import org.junit.Test;
 
-import static lt.starter.SequenceTasksTest.array;
+import static lt.starter.utils.SequenceTasksTest.array;
 import static org.junit.Assert.*;
 
 /**
@@ -83,10 +83,20 @@ public class ArrayUtilsTest {
         assertFalse(ArrayUtils.isEquals(array(1, 2, 3, 4), array(1, 2, 3)));
         assertFalse(ArrayUtils.isEquals(array(1, 2, 3, 4), array(1, 2, 3, 4, 5)));
     }
+
     @Test
     public void testContainsArray() throws Exception {
         assertTrue(ArrayUtils.containsArray(array(5, 9, 6, 7), array(9, 6)));
         assertTrue(ArrayUtils.containsArray(array(5, 9, 6, 7), array(5, 9, 6, 7)));
         assertFalse(ArrayUtils.containsArray(array(5, 9, 6, 7), array(9, 7)));
+    }
+
+    @Test
+    public void testRemoveFromArray2() throws Exception {
+        assertArrayEquals(array(5, 7, 9, 11, 18, 23), ArrayUtils.removeFromArray(array(5, 7, 9, 11, 18, 23), array(7, 5, 11)));
+        assertArrayEquals(array(5, 18, 23), ArrayUtils.removeFromArray(array(5, 7, 13, 9, 11, 18, 23), array(7, 13, 9, 11)));
+        assertArrayEquals(array(5, 18, 23), ArrayUtils.removeFromArray(array(5, 7, 9, 11, 18, 23), array(7, 9, 11)));
+        assertArrayEquals(array(5, 7, 9, 11, 18, 23), ArrayUtils.removeFromArray(array(5, 7, 9, 11, 18, 23), array()));
+        assertArrayEquals(array(), ArrayUtils.removeFromArray(array(), array()));
     }
 }

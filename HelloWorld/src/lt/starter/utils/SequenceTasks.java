@@ -1,4 +1,4 @@
-package lt.starter;
+package lt.starter.utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

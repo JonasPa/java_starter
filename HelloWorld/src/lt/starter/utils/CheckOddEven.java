@@ -1,4 +1,4 @@
-package lt.starter;
+package lt.starter.utils;
 
 public class CheckOddEven {   // saved as "CheckOddEven.java"
    public static void main(String[] args) {

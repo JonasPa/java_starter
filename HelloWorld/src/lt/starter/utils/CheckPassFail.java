@@ -1,4 +1,4 @@
-package lt.starter;
+package lt.starter.utils;
 
 public class CheckPassFail { // saved as "CheckPassFail.java"
    public static void main(String[] args) {

@@ -1,9 +1,9 @@
-package lt.starter;
+package lt.starter.math;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static lt.starter.SequenceTasks.toIntArray;
+import static lt.starter.utils.SequenceTasks.toIntArray;
 
 /**
  * Created by Jonas Pakalnis
@@ -59,7 +59,7 @@ public class MathUtils {
     }
 
     public static double average(int... numbers) {
-        if (numbers.length ==  0) {
+        if (numbers.length == 0) {
             return 0;
         }
         int sum = 0;
@@ -68,5 +68,23 @@ public class MathUtils {
         }
 
         return sum / numbers.length;
+    }
+
+    public static long factorial(long number) {
+        long fact = 1;
+        for (long i = 1; i <= number; i++) {
+            fact = fact * i;
+
+        }
+        return fact;
+    }
+
+    public static boolean isPrime(int number) {
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }

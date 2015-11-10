@@ -1,4 +1,4 @@
-package lt.starter;
+package lt.starter.utils;
 
 public class UpperCase {
    public static String capitalize(String text){

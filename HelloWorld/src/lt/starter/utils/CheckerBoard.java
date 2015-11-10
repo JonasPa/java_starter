@@ -1,4 +1,4 @@
-package lt.starter;
+package lt.starter.utils;
 
 public class CheckerBoard {   // saved as "CheckerBoard.java"
    public static void main (String[] args) {

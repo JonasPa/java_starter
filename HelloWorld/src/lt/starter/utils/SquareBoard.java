@@ -1,4 +1,4 @@
-package lt.starter;
+package lt.starter.utils;
 
 public class SquareBoard {   // saved as "SquareBoard.java"
    public static void main (String[] args) {

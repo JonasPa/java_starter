@@ -1,4 +1,4 @@
-package lt.starter;
+package lt.starter.utils;
 
 /**
  * Created by Andrius-PC on 2015-09-28.

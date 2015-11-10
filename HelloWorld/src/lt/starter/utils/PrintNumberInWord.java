@@ -1,4 +1,4 @@
-package lt.starter;
+package lt.starter.utils;
 
 public class PrintNumberInWord {   // saved as "PrintNumberInWord.java"
    public static void main(String[] args) {

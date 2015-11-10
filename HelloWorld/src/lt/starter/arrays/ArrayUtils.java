@@ -1,10 +1,9 @@
 package lt.starter.arrays;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import static lt.starter.SequenceTasks.toIntArray;
+import static lt.starter.utils.SequenceTasks.toIntArray;
 
 /**
  * Created by Andrius-PC on 2015-10-06.
@@ -150,23 +149,26 @@ public class ArrayUtils {
         return false;
     }
 
-    public static boolean containsArray(int[] primaryArray, int[] secondArray){
+    public static boolean containsArray(int[] primaryArray, int[] secondArray) {
+        if (secondArray.length == 0){
+            return false;
+        }
         int index = 0;
         boolean foundStart = false;
         for (int i = 0; i < primaryArray.length; i++) {
             //Tikrinu, kada pirmo arrayjaus indexas bus lygus mano arrayjaus pirmàjam skaièiui
-            if (primaryArray[i] == secondArray[index]){
+            if (primaryArray[i] == secondArray[index]) {
                 //Neþinau
                 foundStart = true;
                 //Didinu indexà
                 index++;
                 //Tikrinu, ar index'as pasiekë antro arrajaus pabaigà
-                if(index == secondArray.length){
+                if (index == secondArray.length) {
                     return true;
                 }
             } else {
                 //Neþinau
-                if (foundStart){
+                if (foundStart) {
                     return false;
                 }
             }
@@ -174,13 +176,17 @@ public class ArrayUtils {
         return false;
     }
 
-    public static int[] removeFromArray (int[] firstArray, int[] secondArray){
-        boolean first = ArrayUtils.containsArray(firstArray, secondArray);
+    public static int[] removeFromArray(int[] firstArray, int[] arrayToRemove) {
+        boolean areInArray = ArrayUtils.containsArray(firstArray, arrayToRemove);
+        if (areInArray) {
+            int firstNumber = indexOf(arrayToRemove[0], firstArray);
+            int secondNumber = indexOf(arrayToRemove[arrayToRemove.length - 1], firstArray);
+            int[] firstSection = ArrayUtils.subArrays(firstArray, 0, firstNumber);
+            int[] secondSection = ArrayUtils.subArrays(firstArray, secondNumber + 1, firstArray.length);
 
+            return ArrayUtils.sumOfArray(firstSection, secondSection);
 
-
-
-
-        return null;
+        }
+        return firstArray;
     }
 }

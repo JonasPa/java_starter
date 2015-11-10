@@ -1,5 +1,6 @@
-package lt.starter;
+package lt.starter.utils;
 
+import lt.starter.utils.ReplaceText;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

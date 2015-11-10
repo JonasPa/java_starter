@@ -1,4 +1,4 @@
-package lt.starter;
+package lt.starter.utils;
 
 /**
  * Created by Jonas Pakalnis
